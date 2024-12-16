@@ -16,7 +16,7 @@ title: 事件列表
 | SESSION_RENEWAL | 用户token续期 |
 
 ### 事件示例
-#### PAY_TIMEOUT
+### PAY_TIMEOUT
 ```json
 {
     "tag": "1273",
@@ -34,7 +34,7 @@ title: 事件列表
 ```
 <br/>
 
-#### REFUND
+### REFUND
 ```json
 {
     "tag": "1515",
