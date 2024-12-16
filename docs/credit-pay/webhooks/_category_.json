@@ -1,0 +1,8 @@
+{
+    "label": "Webbhook",
+    "position": 6,
+    "link": {
+        "type": "generated-index",
+        "description": "业务事件将通过Webhooks通知"
+    }
+}
