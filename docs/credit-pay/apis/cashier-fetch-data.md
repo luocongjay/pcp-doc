@@ -46,25 +46,10 @@ title: 获取收银台数据
 <br/>
 
 **代码示例**
-```TypeScript
-import axios from 'axios';
 
-// 定义请求配置
-const config = {
-  method: 'post',
-  url: 'https://domain.co/dg/v1/cashier/fetch_data',
-  headers: {
-    trace: 'xx-3f1e-40c9-b26d-aa86e7611230',
-     authorization: 'Bearer xxxxxOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0SWQiOiI2NzI4ZDgyYjAwMTBhZThhYzVlOSIsInBsYXRmb3JtSWQiOiIzMjhjZjk1OTwZjU0Zjg5YTJkZDRjM2JmOThhYzVmYiIsInBsYXRmb3JtVXNlcklkIjoiNDczXzMyXzg2MDAwNjk4IiwidXNlcklkIjoiNjczYjEyYTcwMDJiYTk3ZjY0MTYiLCJzZWNyQiOiI5MmJmODkiLCJpZGVudENvZGUiOiIzZTZhZTBjNWVhOTU0ZDNkYjkzYzA4NmIxODgwNGU4MiIsImlhdCI6MTczMjM0MTM1NiwiZXhwIjoxNzMyMzQ0OTU2fQ.rRkCh1L-1ZcJpBvhn0DdFuE6wm7BVzxxxxx'
-  }
-};
-
-// 发送请求
-axios(config)
-  .then(response => {
-    console.log(response.data);
-  })
-  .catch(error => {
-    console.error(error);
-  });
+```bash
+curl -X POST \
+  https://credit-pay-dev.aatest.online/dg/v1/cashier/fetch_data \
+  -H "trace: xx-3f1e-40c9-b26d-aa86e7611230" \
+  -H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0SWQiOiI2NzI4ZDgyYjAwMTBhZThhYzVlOSIsInBsYXRmb3JtSWQiOiIzMjhjZjk1OTUwZjU0Zjg5YTJkZDRjM2JmOThhYzVmYiIsInBsYXRmb3JtVXNlcklkIjoiNDczXzMyXzg2MDAwNjk4IiwidXNlcklkIjoiNjc1MmFjOTYwMDFkM2Q2YzA0ZWEiLCJzZWNyZXQiOiI0YzYzYzMiLCJpZGVudENvZGUiOiI4Yzc4ZTAyNzU3ZWY0NmM2YTRmY2RiNmFmZTI5Y2E3NyIsImlhdCI6MTczNDM0MjY3NiwiZXhwIjoxNzM0MzQ2Mjc2fQ.0dGf0t2D0s4Y0r_05Yo9hk5Qe_2Ld-g9KK6UxhKf8nI"
 ```

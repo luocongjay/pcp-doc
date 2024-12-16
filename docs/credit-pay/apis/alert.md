@@ -15,30 +15,16 @@ title: 告警
 <br/>
 
 **代码示例**
-```TypeScript
-import axios from 'axios';
-
-// 定义请求参数
-const data = {
-    message: 'mock error 1',
-    extra: {
-      type: 'hello',
-      data: {
-        message: 'mock error'
-      }
+```bash
+curl -X POST https://credit-pay-dev.aatest.online/dg/v1/internal/alert \
+-H "Content-Type: application/json" \
+-d '{
+  "message": "mock error 1",
+  "extra": {
+    "type": "hello",
+    "data": {
+      "message": "mock error"
     }
-  }；
-
-// 发送 POST 请求
-axios.post('https://credit-pay-dev.aatest.online/dg/v1/internal/alert', data, {
-  headers: {},
-})
-  .then(response => {
-    // 处理响应数据
-    console.log.data);
-  })
-  .catch(error => {
-    // 处理错误
-    console.error(error);
-  });
+  }
+}'
 ```

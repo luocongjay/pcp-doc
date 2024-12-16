@@ -37,28 +37,9 @@ title: 一次性授权码登录
 <br/>
 
 **代码示例**
-```TypeScript
-import axios from 'axios';
-
-// 定义请求配置
-const config = {
-  method: 'post',
-  url: 'https://credit-pay-dev.aatest.online/dg/v1/identify/redirect',
-  headers: {
-    trace: 'xx-3f1e-40c9-b26d-aa86e7611230', // 业务追踪IP
-    'Content-Type': 'application/json'
-  },
-  data: {
-    ident_code: '4f255f79bdf9443d817dac5e64d51fab'
-  }
-};
-
-// 发送请求
-axios(config)
-  .then(response => {
-    console.log(response.data);
-  })
-  .catch(error => {
-    console.error(error);
-  });
+```bash
+curl -X POST https://credit-pay-dev.aatest.online/dg/v1/identify/redirect \
+-H "trace: xx-3f1e-40c9-b26d-aa86e7611230" \
+-H "Content-Type: application/json" \
+-d '{"ident_code": "8c78e02757ef46c6a4fcdb6afe29ca77"}'
 ```

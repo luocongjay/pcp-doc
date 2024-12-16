@@ -46,38 +46,18 @@ title: 获取一次性授权码
     "trace": "xx-3f1e-40c9-b26d-aa86e7611230"
 }
 ```
-
 <br/>
 
+
 **代码示例**
-```TypeScript
-import axios from 'axios';
 
-// 定义请求配置, 自行替换domain.com
-const config = {
-  method: 'post',
-  url: 'https://credit-pay-dev.aatest.online/dg/v1/platform/identify/auth',
-  headers: {
-    trace: 'xx-3f1e-40c9-b26d-aa86e7611230',
-    'api-key': 'xxx3grBhn10v494XqwpPOV7gn1Uu0rUVMuxpxAowvNfXEs5UzZueUdq7vgNc',
-    signature: 'NjpnWqZjPatY3AKCpC7qz+TiMRs=', // 需要按要求生成
-    'Content-Type': 'application'
-  },
-  data: {
-    customer_token: 'xxx72263c7b97095f095cb624adccc60_ad0975be-877c-4420-8e2e-8a156a3ec7b2app',
-    customer_no: '473_32_86000698',
-    callback_url: 'https://domain.com/payment/callback', // 平台回调地址
-    token_expire: 1734171928133,
-    client_ip: '192.168.1.166'
-  }
-};
-
-// 发送请求
-axios(config)
-  .then(response => {
-    console.log(response.data);
-  })
-  .catch(error => {
-    console.error(error);
-  });
+```bash
+curl -X POST \
+  -H "lang: en-US" \
+  -H "trace: xx-3f1e-40c9-b26d-aa86e7611230" \
+  -H "api-key: kHm2nk3dgrBhn10v494XqwpPOV7gn1Uu0rUVMuxpxAowvNfXEs5UzZueUdq7vgNc" \
+  -H "signature: tkqXws4SYtA7MDN3PYSKs+N8X6Y=" \
+  -H "x-real-ip: 192.168.1.66" \
+  -d '{"customer_token":"a1472263c7b97095f095cb624adccc60_ad0975be-877c-4420-8e2e-8a156a3ec7b2app","customer_no":"473_32_86000698","callback_url":"https://credit-pre.aatest.online/payment/callback","token_expire":1732521424191,"client_ip":"192.168.1.166"}' \
+  "https://credit-pay-dev.aatest.online/dg/v1/platform/identify/auth?platId=328cf95950f54f89a2dd4c3bf98ac5fb"
 ```
