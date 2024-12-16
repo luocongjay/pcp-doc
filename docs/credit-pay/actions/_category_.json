@@ -1,0 +1,8 @@
+{
+    "label": "授信额度管理",
+    "position": 4,
+    "link": {
+        "type": "generated-index",
+        "description": "平台需要自行实现授信额度管理"
+    }
+}
