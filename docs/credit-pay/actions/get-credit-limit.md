@@ -11,7 +11,15 @@ title: 获取授信额度
 
 ### Credit Pay以下面的形式调用接口获取授信额度
 ```typescript
-function getCreditLimit(): Promise<any> {
+import { createHmac } from 'crypto'
+
+function hmacSha1(content: string, secret: string) {
+  const hmac = createHmac('sha1', secret)
+  hmac.update(content)
+  return hmac.digest().toString('base64')
+}
+
+function getCreditLimit() {
   const signatureKey = "your-signature-key";
   const timestamp = Date.now();
 
