@@ -6,7 +6,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 
 const config: Config = {
     title: "PassTo CreditPay",
-    tagline: "便捷化Crypto与法币之间的支付转换",
+    tagline: "法币扩展消费适配方案",
     favicon: "img/favicon.ico",
 
     // Set the production url of your site here
@@ -39,8 +39,8 @@ const config: Config = {
                     sidebarPath: "./sidebars.ts",
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
-                    editUrl:
-                        "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+                    // editUrl:
+                    //     "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
                 },
                 theme: {
                     customCss: "./src/css/custom.css",
@@ -93,7 +93,7 @@ const config: Config = {
                 //     ],
                 // },
             ],
-            // copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+            copyright: `Copyright © ${new Date().getFullYear()} PassTo CreditPay`,
         },
         prism: {
             theme: prismThemes.github,
