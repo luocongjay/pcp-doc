@@ -5,7 +5,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-    title: "Credit Pay",
+    title: "PassTo CreditPay",
     tagline: "便捷化Crypto与法币之间的支付转换",
     favicon: "img/favicon.ico",
 
@@ -51,12 +51,12 @@ const config: Config = {
 
     themeConfig: {
         // Replace with your project's social card
-        image: "img/docusaurus-social-card.jpg",
+        image: "img/cp.svg",
         navbar: {
-            title: "Credit Pay",
+            title: "PassTo CreditPay",
             logo: {
-                alt: "My Site Logo",
-                src: "img/logo.svg",
+                alt: "Logo",
+                src: "img/cp.svg",
             },
             items: [
                 {
