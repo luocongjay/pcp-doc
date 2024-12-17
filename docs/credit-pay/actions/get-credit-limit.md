@@ -3,7 +3,7 @@ title: 获取授信额度
 ---
 **平台需要提供此接口，提供给Credit Pay收银台调用以获取授信额度。**
 
-:::danger
+:::warning
 1. 建议平台保留支付渠道单笔最大限额。
 2. 交易过程中授信额变动之后终止本次交易流程。
 :::
@@ -24,7 +24,7 @@ function getCreditLimit() {
   const timestamp = Date.now();
 
   const domain = "https://your-domain.com";
-  const path = "/api/v1/credit-pay/notify"; // 可自定义
+  const path = "/api/v1/credit-pay/notify"; // 需要平台方提供的，用于获取授信额的接口。url可定义。
   const data = {
     type: 'GET_DEFAULT_ACCOUNT_CREDIT_LIMIT', // 固定事件名
     data: {
@@ -43,17 +43,8 @@ function getCreditLimit() {
     timestamp
   };
 
-  return axios.post(`${domain}${path}`, user, { headers })
-    .then(response => response.data);
+  return axios.post(`${domain}${path}`, data, { headers })
 }
-
-// Usage example
-async function main() {
-  const creditLimitData = await getCreditLimit();
-  console.log('Credit limit data:', creditLimitData);
-}
-
-main();
 ```
 
 ### 要求返回数据格式
