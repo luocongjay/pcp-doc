@@ -1,6 +1,6 @@
 ---
 title: 一次性授权码登录
-sidebar_position: 2
+sidebar_position: 3
 ---
 **使用一次性授权码登录Credit Pay收银台，并获取系统的业务token。**
 
@@ -24,6 +24,14 @@ sidebar_position: 2
 <br/>
 
 **响应**
+| 参数名     | 类型   | 描述                          |
+| ---------- | ------ | ----------------------------- |
+| code       | int    | 状态码                        |
+| msg        | string | 响应消息                      |
+| data       | object | 响应数据                      |
+| open_token | string | PassTo CreditPay系统业务token |
+| trace      | string | 业务追踪id                    |
+
 ```json
 {
     "code": 0,

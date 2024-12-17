@@ -1,16 +1,16 @@
 ---
 title: 获取一次性授权码
-sidebar_position: 1
+sidebar_position: 2
 ---
-**平台登录过程中，获取一次性授权码，用于登录Creit Pay收银台**
+**平台登录过程中，获取一次性授权码，用于登录Credit Pay收银台**
 
-`POST` `https://credit-pay-dev.aatest.online/dg/v1/platform/identify/auth`
+`POST` `https://credit-pay-dev.aatest.online/dg/v1/platform/identify/auth?plat_id=xxxxxxxxx`
 <br/>
 
 **Query Params**
-| 参数名 | 类型   | 是否必须 | 描述       |
-| ------ | ------ | -------- | ---------- |
-| platId | string | 是       | 平台唯一ID |
+| 参数名  | 类型   | 是否必须 | 描述       |
+| ------- | ------ | -------- | ---------- |
+| plat_id | string | 是       | 平台唯一ID |
 
 <br/>
 
@@ -19,7 +19,7 @@ sidebar_position: 1
 | --------- | ------ | -------- | -------------------------------------------- |
 | trace     | string | 是       | 用于链路追踪，推荐传入平台自身业务的trace Id |
 | api-key   | string | 是       | 平台密钥，用于鉴权                           |
-| signature | string | 是       | HMAC签名，详情见身份校验章节                 |
+| signature | string | 是       | HMAC签名，详情见[身份校验](../auth)章节      |
 | lang      | string | 否       | 语言，默认为en-US                            |
 
 <br/>
@@ -36,6 +36,15 @@ sidebar_position: 1
 <br/>
 
 **响应**
+| 参数名     | 类型   | 描述                       |
+| ---------- | ------ | -------------------------- |
+| code       | int    | 状态码                     |
+| msg        | string | 响应消息                   |
+| data       | object | 响应数据                   |
+| ident_code | string | 颁发的一次性授权码         |
+| url        | string | 携带一次性授权码的跳转地址 |
+| trace      | string | 业务追踪id                 |
+
 ```json
 {
     "code": 0,
@@ -58,7 +67,6 @@ curl -X POST \
   -H "trace: xx-3f1e-40c9-b26d-aa86e7611230" \
   -H "api-key: kHm2nk3dgrBhn10v494XqwpPOV7gn1Uu0rUVMuxpxAowvNfXEs5UzZueUdq7vgNc" \
   -H "signature: tkqXws4SYtA7MDN3PYSKs+N8X6Y=" \
-  -H "x-real-ip: 192.168.1.66" \
   -d '{"customer_token":"a1472263c7b9709xxxb624adccc60_ad0975be-877c-4420-8e2e-8a156a3ec7b2app","customer_no":"473_32_86000698","callback_url":"https://credit-pre.aatest.online/payment/callback","token_expire":1732521424191,"client_ip":"192.168.1.166"}' \
-  "https://credit-pay-dev.aatest.online/dg/v1/platform/identify/auth?platId=328cf95950f54f89a2dd4c3bf98ac5fb"
+  "https://credit-pay-dev.aatest.online/dg/v1/platform/identify/auth?plat_id=328cf95950f54f89a2dd4c3bf98ac5fb"
 ```

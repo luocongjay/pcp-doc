@@ -9,9 +9,9 @@ sidebar_position: 5
 
 
 ### HMAC 签名
-* **获取Signature key**：平台在系统注册后，在后台会自动颁发签名秘钥， 用于对请求内容进行签名。
+* **获取Signature key**：平台在系统注册后，在后台会自动颁发签名密钥， 用于对请求内容进行签名。
 * **拼接URL和payload**: 将请求的path与payload拼接在一起，确保两者之间没有空格。
-* **生成签名**: 使用sha1算法，将拼接好的url和payload，使用Signature key进行加密，得到签名。
+* **生成签名**: 使用HMAC-SHA1算法，将拼接好的url和payload，使用Signature key进行加密，得到签名。
 * **签名参数**: 将签名作为参数，添加到请求头中，发送请求。
 
 ### 代码示例
@@ -21,44 +21,43 @@ sidebar_position: 5
 :::
 
 ```typescript
-import axios from 'axios';
-import { createHmac } from 'crypto';
+import axios from "axios";
+import { createHmac } from "crypto";
 
-const apiKey = 'your_api_key';
-const signaturekey = 'your_secret_key';
+const apiKey = "your_api_key";
+const signaturekey = "your_secret_key";
 
 function createSignature(path, payload) {
     const data = JSON.stringify(payload);
     const message = `${path}${data}`;
-    const hmac = createHmac('sha1', signaturekey);
+    const hmac = createHmac("sha1", signaturekey);
     hmac.update(message);
-    return hmac.digest().toString('base64');
+    return hmac.digest().toString("base64");
 }
 
 function requestData(url, path, payload) {
     const headers = {
-        'Content-Type': 'application/json',
-        'api-key': APIKey,
-        'signature': createSignature(path, payload)
+        "Content-Type": "application/json",
+        "api-key": APIKey,
+        signature: createSignature(path, payload),
     };
 
-    return axios.post(url, payload, { headers })
-        .then(response => {
-            console.log('Response:', response.data);
+    return axios
+        .post(url, payload, { headers })
+        .then((response) => {
+            console.log("Response:", response.data);
         })
-        .catch(error => {
-            console.error('Error:', error);
+        .catch((error) => {
+            console.error("Error:", error);
         });
 }
 
-// Example usage
-
-const domain = 'https://api.example.com';
-const endpoint = '/endpoint';
+const domain = "https://api.example.com";
+const endpoint = "/endpoint";
 const url = `${domain}${endpoint}`;
 const payload = {
-    key1: 'value1',
-    key2: 'value2'
+    key1: "value1",
+    key2: "value2",
 };
 
 requestData(url, endpoint, payload);
