@@ -1,9 +1,10 @@
 ---
 title: 获取收银台数据
+sidebar_position: 3
 ---
-**获取收银台展示数据**
+**获取收银台页面的展示数据。**
 
-`POST` `https://cashier.passto.credit/api/v1/cashier/fetch_data`
+`POST` `https://credit-pay-dev.aatest.online/dg/v1/cashier/fetch_data`
 <br/>
 
 
@@ -28,8 +29,8 @@ title: 获取收银台数据
         "field_seat": "cvrmvCR0q",
         "local_bucket": "2d7f4de7935d4b298c8571367da4df87",
         "max_amount": "50000",
-        "tag": "外部系统卡唯一标识",
-        "available_cards": [
+        "tag": "外部系统卡唯一标识", // 平台授信额接口返回
+        "available_cards": [ // 平台授信额接口返回
             {
                 "tag": "外部系统卡唯一标识",
                 "amount": "10001.23",
@@ -45,7 +46,7 @@ title: 获取收银台数据
 
 <br/>
 
-**代码示例**
+**请求示例**
 
 ```bash
 curl -X POST \

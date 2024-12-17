@@ -1,24 +1,25 @@
 ---
 title: 一次性授权码登录
+sidebar_position: 2
 ---
-**使用一次性授权码登录**
+**使用一次性授权码登录Credit Pay收银台，并获取系统的业务token。**
 
-`POST` `https://cashier.passto.credit/api/v1/identify/redirect`
+`POST` `https://credit-pay-dev.aatest.online/dg/v1/identify/redirect`
 <br/>
 
 
 **Headers**  
-| 参数名    | 类型   | 是否必须 | 描述                                         |
-| --------- | ------ | -------- | -------------------------------------------- |
-| trace     | string | 是       | 用于链路追踪，推荐传入平台自身业务的trace Id |
+| 参数名 | 类型   | 是否必须 | 描述                                         |
+| ------ | ------ | -------- | -------------------------------------------- |
+| trace  | string | 是       | 用于链路追踪，推荐传入平台自身业务的trace Id |
 
 
 <br/>
 
 **Body**
-| 参数名         | 类型   | 是否必须 | 描述                              |
-| -------------- | ------ | -------- | --------------------------------- |
-| ident_code      | string | 是       | 一次性授权码     |
+| 参数名     | 类型   | 是否必须 | 描述         |
+| ---------- | ------ | -------- | ------------ |
+| ident_code | string | 是       | 一次性授权码 |
 
 <br/>
 
@@ -36,7 +37,7 @@ title: 一次性授权码登录
 
 <br/>
 
-**代码示例**
+**请求示例**
 ```bash
 curl -X POST https://credit-pay-dev.aatest.online/dg/v1/identify/redirect \
 -H "trace: xx-3f1e-40c9-b26d-aa86e7611230" \

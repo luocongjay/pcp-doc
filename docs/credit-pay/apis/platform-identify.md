@@ -1,9 +1,10 @@
 ---
 title: 获取一次性授权码
+sidebar_position: 1
 ---
-**获取一次性授权码，用于后续接口登录**
+**平台登录过程中，获取一次性授权码，用于登录Creit Pay收银台**
 
-`POST` `https://cashier.passto.credit/api/v1/platform/identify/auth`
+`POST` `https://credit-pay-dev.aatest.online/dg/v1/platform/identify/auth`
 <br/>
 
 **Query Params**
@@ -49,7 +50,7 @@ title: 获取一次性授权码
 <br/>
 
 
-**代码示例**
+**请求示例**
 
 ```bash
 curl -X POST \
@@ -58,6 +59,6 @@ curl -X POST \
   -H "api-key: kHm2nk3dgrBhn10v494XqwpPOV7gn1Uu0rUVMuxpxAowvNfXEs5UzZueUdq7vgNc" \
   -H "signature: tkqXws4SYtA7MDN3PYSKs+N8X6Y=" \
   -H "x-real-ip: 192.168.1.66" \
-  -d '{"customer_token":"a1472263c7b97095f095cb624adccc60_ad0975be-877c-4420-8e2e-8a156a3ec7b2app","customer_no":"473_32_86000698","callback_url":"https://credit-pre.aatest.online/payment/callback","token_expire":1732521424191,"client_ip":"192.168.1.166"}' \
+  -d '{"customer_token":"a1472263c7b9709xxxb624adccc60_ad0975be-877c-4420-8e2e-8a156a3ec7b2app","customer_no":"473_32_86000698","callback_url":"https://credit-pre.aatest.online/payment/callback","token_expire":1732521424191,"client_ip":"192.168.1.166"}' \
   "https://credit-pay-dev.aatest.online/dg/v1/platform/identify/auth?platId=328cf95950f54f89a2dd4c3bf98ac5fb"
 ```
