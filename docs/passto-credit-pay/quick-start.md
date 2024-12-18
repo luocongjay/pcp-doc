@@ -3,11 +3,12 @@ title: 快速开始
 sidebar_label: '快速开始'
 sidebar_position: 2
 ---
-<br/>
-
 ## ⭐ 快速简单的整合方式 
 PassTo CreditPay 提供灵活的 API 对接方案，旨在为平台提供便捷高效的接入体验。我们的 API 设计充分考虑开发者的需求，确保快速、安全的集成。
-<br/>
+:::tip
+平台与Credit Pay的所有API交互都需要进行身份验证。  
+:::
+***
 
 ## 开发者快速上手
 ### 步骤 ①：登录
@@ -34,11 +35,6 @@ PassTo CreditPay 提供灵活的 API 对接方案，旨在为平台提供便捷�
 ![鉴权流程图](../../assets/OAuth2.0-v1.0.0.drawio.png)
 
 
-:::tip
-平台与Credit Pay的所有API交互都需要进行身份验证。  
-* [API Key](auth)
-* [HMAC 签名](auth)
-:::
 
 <!-- ## 鉴权登录
 平台接入Credit Pay，需要接入以下接口  

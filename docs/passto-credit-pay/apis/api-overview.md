@@ -4,7 +4,7 @@ sidebar_position: 1
 ---
 👀 了解 PassTo CreditPay API   
 
-PassTo CreditPay API 是基于REST风格组织。我们的API使用可预测的资源导向URL，返回JSON编码的响应。
+PassTo CreditPay API采用RESTful风格构建，设计了可预测的资源导向URL，以确保高效的访问。我们的API返回JSON格式的响应，旨在提供简洁明了的数据交互体验。
 ***
 
 ## API常用请求参数
