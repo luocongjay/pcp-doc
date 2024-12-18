@@ -41,8 +41,8 @@ sidebar_position: 2
 | code       | int    | 状态码                     |
 | msg        | string | 响应消息                   |
 | data       | object | 响应数据                   |
-| ident_code | string | 颁发的一次性授权码         |
-| url        | string | 携带一次性授权码的跳转地址 |
+| data.ident_code | string | 颁发的一次性授权码         |
+| data.url        | string | 携带一次性授权码的跳转地址 |
 | trace      | string | 业务追踪id                 |
 
 ```json

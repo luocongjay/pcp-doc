@@ -29,7 +29,7 @@ sidebar_position: 3
 | code       | int    | 状态码                        |
 | msg        | string | 响应消息                      |
 | data       | object | 响应数据                      |
-| open_token | string | PassTo CreditPay系统业务token |
+| data.open_token | string | PassTo CreditPay系统业务token |
 | trace      | string | 业务追踪id                    |
 
 ```json
