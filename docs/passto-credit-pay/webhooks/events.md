@@ -12,18 +12,18 @@ title: 事件列表
 <br/>
 
 ### 事件列表
-| 事件名称            | 事件描述         | 触发时机                                                                        |
-| ------------------- | ---------------- | ------------------------------------------------------------------------------- |
-| PAY_START           | 开始请求支付     |                                                                                 |
-| ASSIGN_SUCCESS      | 分配成功         | 成功获取到条码。                                                                |
-| ASSIGN_FAILED       | 分配失败         | 获取条码失败。                                                                  |
-| GET_BARCODE_SUCCESS | 获取支持条码成功 | 条码刷新，每45秒刷新一次，最多刷新3次。                                         |
-| GET_BARCODE_FAILED  | 获取支持条码失败 |                                                                                 |
-| PAY_SUCCESS         | 支付成功         | 多次，                                                                          |
-| PAY_TIMEOUT         | 支付结束         | 未付款                                                                          |
-| PAY_FAILED          | 支付结束         | 已付款                                                                          |
-| REFUND              | 退款             | 多次，                                                                          |
-| SESSION_RENEWAL     | 用户token续期。  | 多次，从获取条码成功之后开始发起请求，频率为每分钟1次，直到交易完成或交易超时。 |
+| 事件名称            | 事件描述           |
+| ------------------- | ------------------ |
+| PAY_START           | 请求支付           |
+| ASSIGN_SUCCESS      | 分配成功           |
+| ASSIGN_FAILED       | 分配失败           |
+| GET_BARCODE_SUCCESS | 获取支持条码成功   |
+| GET_BARCODE_FAILED  | 获取支持条码失败   |
+| PAY_SUCCESS         | 支付成功（多次）   |
+| REFUND              | 退款（多次）       |
+| PAY_TIMEOUT         | 支付结束（未付款） |
+| PAY_FINISH          | 支付结束（已付款） |
+| SESSION_RENEWAL     | token续期          |
 
 :::warning
 1. PAY_SUCCESS 通常情况下会在PAY_TIMEOUT之前出现。当网络出现波动时，PAY_SUCCESS可能会在PAY_TIMEOUT之后出现。
